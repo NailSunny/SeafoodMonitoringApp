@@ -1,0 +1,62 @@
+﻿<Window x:Class="SeafoodMonitoringApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SeafoodMonitoringApp"
+        mc:Ignorable="d"
+            Title="Проверка условий хранения рыбы" Height="600" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="0">
+            <TextBlock Text="Проверка условий хранения рыбы" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Вид рыбы:" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="FishTypeTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Максимальная температура:" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="MaxTempTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Допустимое превышение (минут):" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="MaxTempTimeTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Минимальная температура:" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="MinTempTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Допустимое понижение (минут):" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="MinTempTimeTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Дата начала измерений:" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="StartDateTimeTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Температуры (через запятую):" Width="200" VerticalAlignment="Center"/>
+                <TextBox x:Name="TemperatureReadingsTextBox" Width="400"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Content="Проверить" Click="CheckConditionsButton_Click" Width="200"/>
+                <Button Content="Сохранить отчет" Click="SaveReportButton_Click" Width="200" Margin="10,0,0,0"/>
+                <Button Content="Загрузить из файла" Click="LoadFromFileButton_Click" Width="200" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBox x:Name="OutputTextBox" Grid.Row="1" Margin="10" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+    </Grid>
+</Window>
